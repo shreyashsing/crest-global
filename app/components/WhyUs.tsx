@@ -55,7 +55,7 @@ export default function WhyUs() {
         <div className="flex flex-col-reverse items-center justify-between gap-10 sm:flex-row">
           {/* Left image (bigger) */}
           <div className="relative">
-            <Image src="/cloud.png" alt="Cloud orb" width={340} height={340} priority />
+            <Image src="/balls.png" alt="Cloud orb" width={420} height={420} priority />
           </div>
 
           {/* Right text */}
