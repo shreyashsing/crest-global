@@ -1,52 +1,92 @@
 'use client';
 
+import OrbitalIcons from './OrbitalIcons';
+
 export default function Hero() {
   return (
-    <div className="relative w-full bg-white">
-      {/* Hero Section with Blue Background */}
-      <div className="relative overflow-hidden min-h-[70vh] rounded-b-3xl bg-white">
-        {/* Blue gradient background */}
-        <div 
-          className="absolute inset-0 rounded-b-3xl"
-          style={{
-            background: 'linear-gradient(180deg, #4D77BE 19.58%, #09224D 92.19%)',
-          }}
-        />
-        
-        {/* Header semi-transparent overlay */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-blue-900/20 backdrop-blur-sm z-10" />
-        
-        {/* Blurred Shapes Background */}
-        <div className="absolute inset-0 overflow-hidden rounded-b-3xl">
-          {/* Large diamond shape - upper left */}
-          <div className="absolute top-20 left-10 w-64 h-64 bg-blue-700/25 blur-3xl rotate-45 rounded-lg" />
-          
-          {/* Medium diamond shape - mid right */}
-          <div className="absolute top-40 right-32 w-48 h-48 bg-blue-700/30 blur-3xl rotate-45 rounded-lg" />
-          
-          {/* Small diamond shape - lower left */}
-          <div className="absolute bottom-32 left-20 w-32 h-32 bg-blue-700/25 blur-3xl rotate-45 rounded-lg" />
-          
-          {/* Square shape - far right */}
-          <div className="absolute top-32 right-10 w-56 h-56 bg-blue-700/20 blur-3xl rotate-12 rounded-lg" />
-          
-          {/* Additional subtle shapes */}
-          <div className="absolute bottom-20 right-40 w-40 h-40 bg-blue-700/20 blur-3xl rotate-45 rounded-lg" />
-          <div className="absolute top-60 left-1/3 w-36 h-36 bg-blue-700/25 blur-3xl rotate-45 rounded-lg" />
+    <section className="relative w-full overflow-hidden rounded-b-3xl min-h-[800px] md:min-h-0" aria-labelledby="hero-heading">
+      {/* Background gradient */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(180deg, #4D77BE 20%, #09224D 95%)' }}
+        aria-hidden="true"
+      />
+
+      {/* Right edge vertical SVG */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2" aria-hidden="true">
+        <svg width="110" height="220" viewBox="0 0 147 292" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_210_1166)">
+            <rect x="25.5" y="266.5" width="241" height="242" transform="rotate(-90 25.5 266.5)" fill="#216BB8"/>
+          </g>
+          <defs>
+            <filter id="filter0_f_210_1166" x="0" y="0" width="293" height="292" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+              <feGaussianBlur stdDeviation="12.75" result="effect1_foregroundBlur_210_1166"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Decorative rotating SVG */}
+      <div className="absolute top-28 left-[520px]" aria-hidden="true">
+        <svg width="100" height="100" viewBox="0 0 135 135" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_259_1307)">
+            <rect x="70.0527" y="8.5" width="83" height="83" transform="rotate(47.8678 70.0527 8.5)" fill="#216BB8"/>
+          </g>
+          <defs>
+            <filter id="filter0_f_259_1307" x="0" y="0" width="134.232" height="134.233" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+              <feGaussianBlur stdDeviation="4.25" result="effect1_foregroundBlur_259_1307"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Soft vignette bottom-left-center to mimic design glow */}
+      <div className="absolute -bottom-32 left-[40%] -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-white/25 blur-3xl" aria-hidden="true" />
+      <div className="absolute -bottom-28 left-[35%] -translate-x-1/2 h-[380px] w-[380px] rounded-full bg-blue-200/40 blur-2xl" aria-hidden="true" />
+
+      {/* Decorative SVG */}
+      <div className="absolute left-12 top-1/2 -translate-y-1/2">
+        <svg width="149" height="149" viewBox="0 0 149 149" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_f_259_1303)">
+            <rect x="23.5996" y="45.082" width="83" height="83" transform="rotate(-15 23.5996 45.082)" fill="#216BB8"/>
+          </g>
+          <defs>
+            <filter id="filter0_f_259_1303" x="-0.000391006" y="-2.47955e-05" width="148.854" height="148.854" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+              <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+              <feGaussianBlur stdDeviation="11.8" result="effect1_foregroundBlur_259_1303"/>
+            </filter>
+          </defs>
+        </svg>
+      </div>
+
+      {/* Content */}
+      <div className="relative mx-auto max-w-7xl px-6 pt-36 pb-28">
+        <div className="flex items-center justify-between">
+          {/* Left column */}
+          <div className="max-w-xl ml-16 sm:ml-24 md:ml-32 mb-60 md:mb-0">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-xs font-semibold text-white ring-1 ring-white/30 backdrop-blur">
+              Explore who we are ↗
+            </div>
+            <h1 id="hero-heading" className="mt-8 text-5xl font-extrabold leading-tight text-white sm:text-6xl">
+              <span className="block">Precision.</span>
+              <span className="block">Trust.</span>
+              <span className="block">Growth.</span>
+            </h1>
+            <p className="mt-6 max-w-md text-[15px] leading-7 text-white/85">
+              Maximize your business's profits with our professional accounting services.
+            </p>
+          </div>
+
+          {/* Right column - Orbital UI */}
+          <OrbitalIcons />
         </div>
-
-        {/* White/Blue Glow Spot - center bottom */}
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-white/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[400px] h-[400px] bg-blue-300/50 rounded-full blur-2xl" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[300px] h-[300px] bg-blue-200/60 rounded-full blur-xl" />
       </div>
-
-      {/* White Section Below */}
-      <div className="relative bg-white min-h-[30vh] pt-8">
-        {/* Space reserved for future image in lower-left corner */}
-        {/* Image will be added here later */}
-      </div>
-    </div>
+    </section>
   );
 }
 

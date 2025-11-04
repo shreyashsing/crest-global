@@ -70,17 +70,17 @@ export default function Testimonials() {
 
           {/* Right large card spans two columns */}
           <div className="md:col-span-2">
-            <div ref={brightPathRef} className="h-full rounded-2xl bg-[#dfeaff] p-8 shadow-sm ring-1 ring-black/5">
-              <div className="text-xl font-semibold tracking-wide text-[#2F5696]">
+            <div ref={brightPathRef} className="h-full rounded-2xl bg-[#dfeaff] p-4 shadow-sm ring-1 ring-black/5">
+              <div className="text-lg font-semibold tracking-wide text-[#2F5696]">
                 BrightPath
-                <br />
+                <br className="hidden" />
                 Technologies
               </div>
-              <p className="mt-6 text-[13.5px] leading-6 text-gray-700">
+              <p className="mt-2 text-[13.5px] leading-5 text-gray-700">
                 “With CrestGlobal’s guidance, our operations became smoother than ever. Their insights and
                 data-driven approach helped us make confident business decisions.”
               </p>
-              <div className="mt-6 text-[11.5px] font-semibold text-gray-700">
+              <div className="mt-2 text-[11.5px] font-semibold text-gray-700">
                 Daniel Weber - CTO of BrightPath Technologies
               </div>
             </div>
