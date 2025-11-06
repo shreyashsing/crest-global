@@ -8,12 +8,14 @@ import Stats from './components/Stats';
 import Testimonials from './components/Testimonials';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
+import PeopleStrip from './components/PeopleStrip';
 
 export default function Home() {
   return (
     <div className="relative w-full min-h-screen bg-white">
       <Header />
       <Hero />
+      <PeopleStrip />
       <About />
       <Services />
       <WhyUs />

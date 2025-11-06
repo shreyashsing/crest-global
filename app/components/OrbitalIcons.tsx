@@ -8,6 +8,10 @@ export default function OrbitalIcons() {
   const innerOrbitAngles = [215, 305];
   const middleOrbitAngles = [75];
   const outerOrbitAngles = [45, 135, 315, 225];
+  // Icon sets per orbit
+  const innerIcons = ['/document_4697135.png', '/glass_14638352.png'];
+  const middleIcons = ['/tax_12643634.png'];
+  const outerIcons = ['/earning_5187392.png', '/document_4697135.png', '/glass_14638352.png', '/tax_12643634.png'];
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -22,6 +26,15 @@ export default function OrbitalIcons() {
   if (isMobile) {
     // Seven evenly spaced angles for the mobile orbit
     const mobileOrbitAngles = [0, 51.43, 102.86, 154.29, 205.71, 257.14, 308.57];
+    const mobileIcons = [
+      '/document_4697135.png',
+      '/glass_14638352.png',
+      '/tax_12643634.png',
+      '/earning_5187392.png',
+      '/document_4697135.png',
+      '/glass_14638352.png',
+      '/tax_12643634.png',
+    ];
     
     return (
       <div className="absolute -bottom-36 left-0 right-0 h-[400px]">
@@ -67,7 +80,7 @@ export default function OrbitalIcons() {
               <div className="p-3 rounded-full shadow-lg" 
                    style={{ background: 'linear-gradient(135deg, #A1C4FF 0%, #FFFFFF 100%)' }}>
                 <Image
-                  src="/precision.png"
+                  src={mobileIcons[index % mobileIcons.length]}
                   alt={`Orbital Icon ${index + 1}`}
                   width={40}
                   height={40}
@@ -139,7 +152,7 @@ export default function OrbitalIcons() {
             >
               <div className="p-2.5 rounded-full shadow-lg" style={{ background: 'linear-gradient(135deg, #A1C4FF 0%, #FFFFFF 100%)' }}>
                 <Image
-                  src="/precision.png"
+                  src={innerIcons[index % innerIcons.length]}
                   alt={`Inner Orbit Icon ${index + 1}`}
                   width={32}
                   height={32}
@@ -162,7 +175,7 @@ export default function OrbitalIcons() {
             >
               <div className="p-3 rounded-full shadow-lg" style={{ background: 'linear-gradient(135deg, #A1C4FF 0%, #FFFFFF 100%)' }}>
                 <Image
-                  src="/precision.png"
+                  src={middleIcons[index % middleIcons.length]}
                   alt={`Middle Orbit Icon ${index + 1}`}
                   width={36}
                   height={36}
@@ -185,7 +198,7 @@ export default function OrbitalIcons() {
             >
               <div className="p-4 rounded-full shadow-lg" style={{ background: 'linear-gradient(135deg, #A1C4FF 0%, #FFFFFF 100%)' }}>
                 <Image
-                  src="/precision.png"
+                  src={outerIcons[index % outerIcons.length]}
                   alt={`Outer Orbit Icon ${index + 1}`}
                   width={44}
                   height={44}

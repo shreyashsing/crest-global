@@ -86,6 +86,19 @@ export default function Hero() {
           <OrbitalIcons />
         </div>
       </div>
+
+      {/* bottom shadow to float above next section */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-14"
+        aria-hidden="true"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(0,0,0,0.22), rgba(0,0,0,0.0))',
+          transform: 'translateY(100%)',
+          filter: 'blur(12px)',
+          opacity: 0.7,
+        }}
+      />
     </section>
   );
 }
