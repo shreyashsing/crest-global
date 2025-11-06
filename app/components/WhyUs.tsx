@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 type Reason = {
   title: string;
@@ -36,6 +37,7 @@ const reasons: Reason[] = [
 ];
 
 export default function WhyUs() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   return (
     <section id="why-us" className="relative w-full" aria-labelledby="why-heading">
       {/* dotted background */}
@@ -74,11 +76,30 @@ export default function WhyUs() {
         </div>
 
         {/* Cards */}
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {reasons.map((reason, idx) => (
+        <div className="mt-14 flex flex-col gap-6 sm:flex-row">
+          {reasons.map((reason, idx) => {
+            const isExpanded = expandedIndex === idx;
+            const hasExpanded = expandedIndex !== null;
+            
+            // Calculate flex grow: expanded card gets more, others get less
+            let flexGrow = 1;
+            if (hasExpanded) {
+              if (isExpanded) {
+                flexGrow = 1.4; // Expanded card is 40% wider
+              } else {
+                flexGrow = 0.9; // Other cards shrink proportionally
+              }
+            }
+            
+            return (
             <div
               key={idx}
-              className="relative flex h-full flex-col justify-between bg-gradient-to-b from-[#375C99] to-[#14427C] p-6 text-white shadow-[0_8px_24px_rgba(23,61,120,0.25)]"
+              className="relative flex h-[320px] flex-col justify-between bg-gradient-to-b from-[#375C99] to-[#14427C] p-6 text-white shadow-[0_8px_24px_rgba(23,61,120,0.25)] transition-all duration-500 ease-in-out rounded-lg"
+              style={{
+                flexGrow: flexGrow,
+                flexShrink: 1,
+                flexBasis: 0,
+              }}
             >
               {/* bold L-strokes with V-cut faded ends */}
               {/* top-left */}
@@ -116,11 +137,16 @@ export default function WhyUs() {
                 </p>
               </div>
 
-              <div className="mt-6 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/50">
+              <button
+                onClick={() => setExpandedIndex(isExpanded ? null : idx)}
+                className="mt-6 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/50 hover:bg-white/10 transition-colors cursor-pointer"
+                aria-label={isExpanded ? 'Collapse card' : 'Expand card'}
+              >
                 <span className="-mt-[2px] text-xl">+</span>
-              </div>
+              </button>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
