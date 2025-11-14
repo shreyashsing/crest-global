@@ -2,17 +2,12 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden">
-      {/* Gradient Background */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        style={{
-          background: 'linear-gradient(180deg, #83A6E5 0%, #FFFFFF 100%)',
-        }}
-        aria-hidden="true"
-      />
-
-      <div className="relative h-[700px]">
+    <footer className="relative w-full overflow-hidden pb-80 md:pb-40 lg:pb-24"
+      style={{
+        background: 'linear-gradient(180deg, #83A6E5 0%, #FFFFFF 100%)',
+      }}
+    >
+      <div className="relative min-h-[700px] pb-64 md:pb-40 lg:pb-24">
         {/* Main footer box */}
         <div className="absolute left-1/2 top-10 -translate-x-1/2 w-[92%] max-w-[1200px] rounded-[28px] shadow-[0_28px_60px_rgba(12,49,94,0.35),0_6px_20px_rgba(8,38,76,0.25)] border border-white/20 ring-1 ring-black/5"
           style={{
@@ -20,7 +15,7 @@ export default function Footer() {
               'linear-gradient(135deg, #0E416B 0%, #1F78BF 35%, #3BB1F5 100%)',
           }}
         >
-          <div className="p-6 md:p-10 lg:p-12">
+          <div className="p-6 md:p-10 lg:p-12 pb-8 md:pb-10 lg:pb-12">
             {/* Top row: Brand + nav + underline bar */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
               {/* Brand and nav */}
@@ -58,14 +53,14 @@ export default function Footer() {
                   <div>1234 XYZ Street, City, Country</div>
                 </div>
 
-                <div className="mt-8 text-white/80 text-[12px]">
+                <div className="mt-8 mb-8 lg:mb-0 text-white/80 text-[12px]">
                   © 2025 Crest Global<br/>
                   All Rights Reserved, Registered under XYZ.
                 </div>
               </div>
 
               {/* Newsletter card */}
-              <div className="lg:col-span-5">
+              <div className="lg:col-span-5 mt-6 lg:mt-0">
                 <div className="rounded-[22px] border border-white/30 p-6 md:p-7 backdrop-blur-md"
                   style={{
                     background:
@@ -137,13 +132,14 @@ export default function Footer() {
 
         {/* Large blurred text */}
         <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full text-center select-none whitespace-nowrap overflow-hidden"
+          className="hidden md:block absolute bottom-0 left-1/2 w-full text-center select-none whitespace-nowrap overflow-visible"
           style={{
             fontSize: 'min(15vw, 180px)',
             fontWeight: '700',
             color: 'rgba(255, 255, 255, 0.4)',
             letterSpacing: '0.05em',
-            lineHeight: '1'
+            lineHeight: '1',
+            transform: 'translateX(-50%) translateY(0%)'
           }}
           aria-hidden="true"
         >

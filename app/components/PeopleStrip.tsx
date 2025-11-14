@@ -18,12 +18,12 @@ export default function PeopleStrip() {
         <h2 id="people-strip-heading" className="sr-only">People</h2>
 
         <div className="flex items-center">
-          <div className="relative -ml-6 sm:-ml-10">
+          <div className="relative -ml-8 sm:-ml-14 md:-ml-20 lg:-ml-28">
             <Image
-              src="/ppls.png"
+              src="/ppl walking final.png"
               alt="People moving forward"
-              width={680}
-              height={390}
+              width={450}
+              height={280}
               priority
             />
           </div>

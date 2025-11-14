@@ -5,6 +5,7 @@ import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import HowItWorks from './components/HowItWorks';
 import Stats from './components/Stats';
+import Teams from './components/Teams';
 import Testimonials from './components/Testimonials';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
@@ -22,6 +23,7 @@ export default function Home() {
       <Stats />
       <Testimonials />
       <HowItWorks />
+      <Teams />
       <ContactUs />
       <Footer/>
     </div>
