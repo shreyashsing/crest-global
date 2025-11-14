@@ -44,6 +44,14 @@ function UserIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
 // Card Component
 function Card({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
@@ -169,7 +177,9 @@ export default function Teams() {
                     <ul className="space-y-2">
                       {member.details.map((detail, detailIndex) => (
                         <li key={detailIndex} className="flex items-start">
-                          <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                          <div className="w-5 h-5 bg-blue-500 rounded border-2 border-blue-400 flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                            <CheckIcon className="w-3 h-3 text-white" />
+                          </div>
                           <span className="text-gray-100 text-sm">{detail}</span>
                         </li>
                       ))}

@@ -2,6 +2,14 @@
 
 import { useRef } from 'react';
 
+function CheckIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  );
+}
+
 type Step = {
   title: string;
   subtitle: string;
@@ -104,7 +112,9 @@ function CardCopy({ index, step }: { index: number; step: Step }) {
       <ul className="mt-4 sm:mt-5 space-y-2 sm:space-y-3 text-[13px] sm:text-[14px] text-gray-800">
         {step.bullets.map((b) => (
           <li key={b} className="flex items-start gap-3">
-            <span className="mt-0.5 inline-block h-4 w-4 rounded-[3px] border border-gray-700" />
+            <span className="mt-0.5 inline-flex h-4 w-4 items-center justify-center rounded-[3px] border-2 border-gray-700 bg-gray-700">
+              <CheckIcon className="h-2.5 w-2.5 text-white" />
+            </span>
             <span>{b}</span>
           </li>
         ))}
